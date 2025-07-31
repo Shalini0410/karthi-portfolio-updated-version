@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Karthi K D - Portfolio</title>
+  <style>
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    body {
+      margin: 0;
+      background: #0f172a;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
+      color: #38bdf8;
+    }
+
+    .profile {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 0 18px #38bdf8, 0 0 28px #0ea5e9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px #7dd3fc, 0 0 34px #38bdf8;
+}
+
+    .profile h1 {
+      margin: 20px 0 8px;
+      font-size: 2.3rem;
+    }
+
+    .profile p {
+      font-size: 1.15rem;
+      color: #facc15;
+      background: #1e293b;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+    }
+    .glow-text {
+  color: gold;
+  font-weight: bold;
+  animation: glow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px gold, 0 0 10px gold;
+  }
+  to {
+    text-shadow: 0 0 15px #fbbf24, 0 0 25px #facc15;
+  }
+}
+    /* Education Section */
+.education {
+  margin-top: 60px;
+}
+
+.education h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #38bdf8;
+  position: relative;
+}
+
+.education h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 70px;
+  height: 3px;
+  background-color: #0ea5e9;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #0ea5e9;
+}
+
+.edu-card {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  padding: 24px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.1);
+  border-left: 4px solid #38bdf8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.3);
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.edu-degree {
+  font-weight: bold;
+  color: #7dd3fc;
+  font-size: 1.1rem;
+}
+
+.edu-year {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.edu-institute {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #facc15;
+  margin-bottom: 6px;
+}
+
+.edu-card p {
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+    .skills {
+  margin-top: 40px;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #38bdf8;
+  position: relative;
+}
+
+.skills h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 70px;
+  height: 3px;
+  background-color: #0ea5e9;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #0ea5e9;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.skill-tags span {
+  background: #1e293b;
+  padding: 12px 18px;
+  border-radius: 22px;
+  font-size: 1rem;
+  color: #e2e8f0;
+  border: 1px solid #38bdf8;
+  transition: transform 0.3s ease, background 0.3s;
+}
+
+.skill-tags span:hover {
+  background: #0ea5e9;
+  transform: scale(1.08);
+  color: #fff;
+}
+   /* Projects Section */
+.projects {
+  margin-top: 60px;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #38bdf8; /* Cyan Blue */
+  position: relative;
+}
+
+.projects h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 70px;
+  height: 3px;
+  background-color: #0ea5e9;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #0ea5e9;
+}
+
+.project-card {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.1);
+  border-left: 4px solid #38bdf8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.3);
+}
+
+.project-card h3 {
+  color: #7dd3fc;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #cbd5e1;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+
+
+
+
+
+
+
+    /* Experience Section */
+.experience {
+  margin-top: 60px;
+}
+
+.experience h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #38bdf8;
+  position: relative;
+}
+
+.experience h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 70px;
+  height: 3px;
+  background-color: #0ea5e9;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #0ea5e9;
+}
+
+/* Experience Cards */
+.exp-card {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  padding: 24px 28px;
+  border-left: 4px solid #38bdf8;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Experience Title */
+.exp-role {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #7dd3fc;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 26px;
+}
+
+.exp-role::before {
+  content: "💼";
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+/* Place or Company */
+.exp-place {
+  font-size: 0.95rem;
+  color: #facc15;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* Experience Description */
+.exp-card p {
+  line-height: 1.5;
+  color: #cbd5e1;
+  margin: 6px 0;
+}
+  
+
+   
+   
+    /* Contact */
+    .contact {
+      margin-top: 60px;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .contact h2::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: #38bdf8;
+      bottom: -6px;
+      left: 0;
+      border-radius: 3px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.3);
+    }
+
+    .contact-card i {
+      font-size: 1.5rem;
+      color: #38bdf8;
+    }
+
+    .contact-card a, .contact-card span {
+      font-size: 1rem;
+      color: #e2e8f0;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .exp-card {
+        padding: 18px;
+      }
+
+      .skill-tags span {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Profile -->
+    <div class="profile-section" style="text-align: center; margin-top: 40px;">
+  <img src="karthi1.jpg" alt="Karthi KD" class="profile-pic">
+  <h1 style="color: #38bdf8; margin-top: 12px;">Karthi K D</h1>
+  <p class="glow-text">
+    Robotics & IoT Expert | Embedded Systems | Trainer | Innovator
+  </p>
+</div>
+    <!-- Education -->
+<div class="education">
+  <h2>Education</h2>
+
+  <div class="edu-card">
+    <div class="edu-header">
+      <span class="edu-degree">B.E. Electronics and Communication Engineering</span>
+      <span class="edu-year">2021 – 2025</span>
+    </div>
+    <p class="edu-institute">M.A.M College of Engineering,Trichy</p>
+    <p>Focused on Embedded Systems, IoT, and Robotics. Presented papers and completed academic projects aligned with Industry 4.0 and smart automation.</p>
+  </div>
+</div>
+
+    <!-- Skills -->
+    <div class="skills">
+      <h2>Skills</h2>
+      <div class="skill-tags">
+        <span>C / C++ / Embedded C</span>
+        <span>Python</span>
+        <span>Arduino, ESP32, Raspberry Pi</span>
+        <span>MQTT / BLE / HTTP</span>
+        <span>Sensor Integration</span>
+        <span>Cloud - AWS / Firebase / Thingspeak</span>
+        <span>Tinkercad / Simulation</span>
+        <span>MIT App Inventor</span>
+        <span>UI for IoT Dashboards</span>
+      </div>
+    </div>
+    <!-- Projects -->
+<div class="projects">
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>Voice Controlled Wheelchair (Mini Project)</h3>
+    <p>A smart wheelchair controlled via voice commands using Arduino and voice recognition module. Built to assist differently-abled individuals with mobility support through IoT integration.</p>
+  </div>
+
+  <div class="project-card">
+    <h3>Biometric and RFID Based Secure Voting System (Main Project)</h3>
+    <p>Developed a secure electronic voting system using biometric fingerprint authentication and RFID verification to ensure reliable, tamper-proof voting, aiming to reduce impersonation in elections.</p>
+  </div>
+</div>
+
+    <!-- Experience -->
+    <div class="experience">
+      <h2>Experience</h2>
+      <div class="exp-card">
+        <div class="exp-role">STEM Educator</div>
+        <p>Conducted 50+ workshops across schools & colleges on Robotics and IoT. Mentored students for national level hackathons and ATL programs.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role">IoT & Robotics Developer</div>
+        <p>Built scalable embedded systems and worked on real-time automation and industrial IoT prototypes using ESP32 and sensors.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role">MIT App Inventor Developer</div>
+        <p>Designed 25+ mobile apps for learning and controlling IoT devices via Bluetooth, WiFi, and custom dashboards.</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-role">Freelance Robotics Mentor</div>
+        <p>Guided students in building bots, line-followers, obstacle avoiders and integrating AI models with microcontrollers.</p>
+      </div>
+    </div>
+    <style>
+  
+ 
+<style>
+  .experience-gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .experience-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 900px;
+    flex-wrap: nowrap;
+  }
+
+  .experience-photo {
+    text-align: center;
+  }
+
+  .experience-photo img {
+    width: 400px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 0 10px #38bdf8;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeInZoom 0.8s ease-in-out;
+  }
+
+  .experience-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px #7dd3fc;
+  }
+
+  .caption {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #444;
+    font-size: 16px;
+  }
+
+  @keyframes fadeInZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* ✅ Mobile View Fix */
+  @media (max-width: 768px) {
+    .experience-gallery {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    .experience-photo img {
+      width: 90%;
+      max-width: 320px;
+      height: auto;
+    }
+
+    .caption {
+      font-size: 15px;
+    }
+  }
+</style>
+
+<!-- ✅ Place This in Your HTML -->
+<div class="experience-gallery-wrapper">
+  <div class="experience-gallery">
+    <div class="experience-photo">
+      <img src="exp1.jpg" alt="Experience 1">
+      
+    </div>
+    <div class="experience-photo">
+      <img src="exp2.jpg" alt="Experience 2">
+      
+    </div>
+  </div>
+</div>
+  
+  
+
+
+
+    <!-- Contact -->
+    <div class="contact">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i>📧</i>
+          <a href="mailto:karthidevanece@gmail.com">karthidevanece@gmail.com"</a>
+        </div>
+       
+        <div class="contact-card">
+          <i>📞</i>
+          <span>+91-9159298076</span>
+        
+
+  </div>
+</body>
+</html>
+        
